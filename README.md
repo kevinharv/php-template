@@ -9,8 +9,6 @@ This repository serves as a template for a PHP website running on an Apache webs
     - Basic PHP actions
     - MySQL DB interactions
     - Create/include styles (Tailwind?)
-- Configure MySQL
-- Create Production Docker Compose file
 - Create Kubernetes definitions/Helm Chart
 
 # Deployment
@@ -20,5 +18,17 @@ Information on deploying a site based on this template.
 // Required environment variables
 
 # Development
+## Environment Variables
+
+**db.env**
+
+Required `.env` file for MySQL database configuration.
+
+| Key | Description |
+| --- | ----------- |
+| MYSQL_ROOT_PASSWORD | `root` user account password |
+| MYSQL_USER | Username for connecting to DB |
+| MYSQL_PASSWORD | Password for connecting to specified user |
+
 // Environment setup
 // Required environment variables

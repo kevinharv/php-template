@@ -1,2 +1,33 @@
 ---
-api
+version: '3.8'
+services:
+  apache:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: kevharv/php-apache-template:latest
+    container_name: apache-webserver
+    depends_on:
+      - mysql
+    ports:
+      - 80:80
+    volumes:
+      - ./src:/var/www/html/:ro
+    restart: on-failure
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost", "||", "exit", "1"]
+      interval: 30s
+      timeout: 30s
+      retries: 5
+      start_period: 30s
+
+  mysql:
+    image: mysql:8.0-debian
+    restart: on-failure
+    volumes:
+      - db_data:/var/lib/mysql
+    env_file:
+      - db.env
+
+volumes:
+  db_data:
