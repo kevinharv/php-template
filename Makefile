@@ -1,8 +1,9 @@
 run: build
-	docker compose up -d
+	chmod 755 -R src/
+	docker compose -f dev-compose.yml up -d
 
 build:
-	docker compose build
+	docker compose -f dev-compose.yml build
 
 clean:
-	docker compose down
+	docker compose -f dev-compose.yml down
