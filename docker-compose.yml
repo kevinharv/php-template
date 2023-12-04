@@ -8,23 +8,25 @@ services:
       - mysql
     ports:
       - 80:80
+      - 443:443
     restart: on-failure
     healthcheck:
-      test: ["CMD", "curl", "--fail", "http://localhost"]
-      interval: 10s
-      timeout: 5s
+      test: ["CMD", "curl", "--fail", "http://localhost", "||", "exit", "1"]
+      interval: 30s
+      timeout: 30s
       retries: 5
-      start_period: 10s
+      start_period: 30s
 
   mysql:
     image: mysql:8.0-debian
+    container_name: mysql
     restart: on-failure
     volumes:
       - db_data:/var/lib/mysql
     env_file:
       - db.env
     healthcheck:
-      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      test: ["CMD", "mysql", "ping", "-h", "localhost"]
       interval: 30s
       timeout: 30s
       retries: 5

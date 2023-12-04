@@ -3,12 +3,11 @@ This repository serves as a template for a PHP website running on an Apache webs
 
 # To-Do
 - Create GitHub Actions Workflow to build and publish Apache webserver image
-- Rebuild Dockerfile with from-scratch Debian distribution - install and configure Apache/PHP manually
 - Create site scaffolding
     - Basic site structure
     - Basic PHP actions
     - MySQL DB interactions
-    - Create/include styles (Tailwind?)
+    - Create/include styles
 - Create Kubernetes definitions/Helm Chart
 
 # Deployment
