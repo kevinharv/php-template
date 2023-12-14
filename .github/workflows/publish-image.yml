@@ -8,7 +8,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: php-apache-template:latest
+  IMAGE_NAME: kevinharv/php-apache-template:latest
 
 jobs:
   build:
