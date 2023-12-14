@@ -8,7 +8,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: kevinharv/php-apache-template:latest
+  IMAGE_NAME: kevinharv/php-apache-template
 
 jobs:
   build:
@@ -29,6 +29,8 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            latest
 
       - name: Build & Push Container Image
         uses: docker/build-push-action@v5
