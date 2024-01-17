@@ -2,6 +2,8 @@
 This repository serves as a template for a PHP website running on an Apache webserver. The webserver has been containerized along with a MySQL server. The `src` directory contains the application code that is running on the webserver.
 
 ## To-Do
+- Create interrupt handler to shutdown Apache correctly
+- Include favicon(s)
 - Create site scaffolding
     - Basic site structure
     - Basic PHP actions

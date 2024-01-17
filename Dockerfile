@@ -12,6 +12,7 @@ RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private
 FROM debian:12 as runner
 
 # Install Apache, PHP, and SSL utilities
+ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get install -y curl apache2 php libapache2-mod-php && \
     rm -rf /var/lib/apt/lists/*
