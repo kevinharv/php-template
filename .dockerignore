@@ -1,0 +1,10 @@
+.github/
+.gitignore
+db.env
+db.env.example
+dev-compose.yml
+docker-compose.yml
+Dockerfile
+LICENSE
+Makefile
+README.md

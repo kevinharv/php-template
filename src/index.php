@@ -8,9 +8,8 @@
     <script src="scripts/index.js"></script> 
 </head>
 <body>
-    <h1 class="header">Hello World!</h1>
+    <h1 class="header">Hello World! I am running!</h1>
     <?php
-        echo "Hello World!";
         echo "Hello from <br> the other side!";
     ?>
 </body>

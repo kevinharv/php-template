@@ -20,6 +20,7 @@ RUN apt-get update && \
 # Copy site files over
 COPY src/ /var/www/html/
 RUN chmod -R 755 /var/www/html/
+RUN rm /var/www/html/index.html
 
 # Copy SSL certs
 COPY --from=ssl /etc/ssl/private/apache-selfsigned.key /etc/ssl/private/apache-selfsigned.key
