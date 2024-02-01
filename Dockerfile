@@ -14,7 +14,7 @@ FROM debian:12 as runner
 # Install Apache, PHP, and SSL utilities
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
-    apt-get install -y curl apache2 php libapache2-mod-php && \
+    apt-get install -y curl apache2 php php-mysql libapache2-mod-php && \
     rm -rf /var/lib/apt/lists/*
 
 # Copy site files over
