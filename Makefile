@@ -6,5 +6,8 @@ run: build
 build:
 	docker compose -f dev-compose.yml build
 
-clean:
+stop:
 	docker compose -f dev-compose.yml down
+
+clean:
+	docker compose -f dev-compose.yml down -v

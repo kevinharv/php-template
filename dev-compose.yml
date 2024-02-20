@@ -14,13 +14,6 @@ services:
       - 443:443
     volumes:
       - ./src:/var/www/html/:ro
-    # develop:
-    #   watch:
-    #     - action: sync
-    #       path: ./src
-    #       target: /var/www/html
-    #       ignore:
-    #         - README.md
     restart: on-failure
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost", "||", "exit", "1"]

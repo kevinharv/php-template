@@ -5,7 +5,6 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Generate a self-signed SSL certificate
-# RUN mkdir /certs
 RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt \
     -subj "/C=US/ST=TX/L=Dallas/O=Harvey/OU=Development/CN=localhost"
 
